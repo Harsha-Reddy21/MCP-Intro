@@ -1,0 +1,195 @@
+[{
+    "overview": {
+      "what_is_mcp": {
+        "question": "What is the Model Context Protocol (MCP)?",
+        "answer": "The Model Context Protocol (MCP) is an open standard introduced by Anthropic in November 2024 that enables AI applications to securely connect and integrate with external data sources, tools, and services. MCP solves the N\u00d7M integration problem by providing a universal interface for reading files, executing functions, and handling contextual prompts, making it the 'USB-C for AI applications'.",
+        "key_points": [
+          "Open standard protocol for AI-to-external-system integration",
+          "Introduced by Anthropic in November 2024",
+          "Solves the N\u00d7M integration complexity problem",
+          "Adopted by major AI providers including OpenAI and Google DeepMind",
+          "Based on JSON-RPC 2.0 for communication"
+        ]
+      },
+      "mcp_architecture": {
+        "question": "What are the main architectural components of MCP?",
+        "answer": "MCP follows a client-server architecture with three main components: Host (user-facing AI applications like Claude Desktop), Client (maintains 1:1 connections with servers), and Server (lightweight programs that expose specific functionalities). This separation creates a modular, maintainable system.",
+        "key_points": [
+          "Host: User-facing AI applications (Claude Desktop, Cursor IDE)",
+          "Client: Manages communication with specific MCP servers",
+          "Server: Exposes tools, resources, and prompts via MCP",
+          "1:1 client-server relationships ensure security isolation",
+          "JSON-RPC 2.0 based communication protocol"
+        ]
+      }
+    },
+    "core_concepts": {
+      "mcp_primitives": {
+        "question": "What are the three core primitives in MCP?",
+        "answer": "MCP has three core primitives: Tools (executable functions that perform actions), Resources (structured data sources accessible via URI), and Prompts (reusable templates for LLM interactions). These primitives provide the foundation for all MCP server functionality.",
+        "key_points": [
+          "Tools: Functions that can be called by AI models to perform actions",
+          "Resources: URI-addressable data sources (files, API endpoints, etc.)",
+          "Prompts: Template-based instructions for consistent LLM interactions",
+          "All primitives support JSON schema definitions",
+          "Enable standardized AI-to-external-system interactions"
+        ]
+      },
+      "communication_model": {
+        "question": "How does communication work in MCP?",
+        "answer": "MCP uses JSON-RPC 2.0 for all communication with three message types: Requests (bidirectional messages requiring responses), Responses (replies to requests), and Notifications (one-way messages). The protocol supports both synchronous and asynchronous operations with proper error handling.",
+        "key_points": [
+          "JSON-RPC 2.0 as the base communication protocol",
+          "Requests: Bidirectional with unique IDs",
+          "Responses: Must match request IDs, include result or error",
+          "Notifications: One-way messages for status updates",
+          "Stateful sessions with capability negotiation"
+        ]
+      }
+    },
+    "implementation": {
+      "python_fastmcp": {
+        "question": "How do I create an MCP server using Python and FastMCP?",
+        "answer": "FastMCP is a high-level Python framework that simplifies MCP server creation. Install with 'pip install fastmcp', create a server instance, use decorators (@mcp.tool, @mcp.resource, @mcp.prompt) to expose functionality, and run with 'mcp.run()'. FastMCP handles all protocol complexities automatically.",
+        "code_example": "\nfrom fastmcp import FastMCP\n\n# Create server instance\nmcp = FastMCP(\"My MCP Server\")\n\n@mcp.tool()\ndef get_weather(location: str) -> str:\n    \"\"\"Get weather for a location\"\"\"\n    return f\"Weather in {location}: Sunny, 72\u00b0F\"\n\n@mcp.resource(\"data://{filename}\")\ndef get_file_data(filename: str) -> str:\n    \"\"\"Get file contents\"\"\"\n    return f\"Contents of {filename}\"\n\n@mcp.prompt()\ndef weather_prompt() -> str:\n    \"\"\"Generate weather report prompt\"\"\"\n    return \"Create a detailed weather report\"\n\nif __name__ == \"__main__\":\n    mcp.run()\n",
+        "key_points": [
+          "FastMCP simplifies MCP server development",
+          "Decorator-based API (@mcp.tool, @mcp.resource, @mcp.prompt)",
+          "Automatic schema generation from type hints",
+          "Built-in support for sync/async operations",
+          "Integrated with official MCP Python SDK"
+        ]
+      },
+      "javascript_sdk": {
+        "question": "How do I implement an MCP server in JavaScript/TypeScript?",
+        "answer": "Use the official TypeScript SDK or community packages like mcp-js-server. Create server instances, define tools/resources/prompts in separate modules, and configure the server with proper message handling. The JavaScript ecosystem offers multiple SDK options for different environments.",
+        "code_example": "\n// Using mcp-js-server\nimport { MCP } from 'mcp-server';\n\nconst tools = {\n  simple_tool: {\n    description: 'A simple tool',\n    handler: async () => new Date().toLocaleString(),\n    schema: {\n      type: 'object',\n      properties: {},\n      required: []\n    }\n  }\n};\n\nconst prompts = {\n  hello_world: {\n    description: 'A simple prompt',\n    arguments: [],\n    messages: [{\n      role: 'assistant',\n      content: { type: 'text', text: 'Hello, world!' }\n    }]\n  }\n};\n\nconst server = new MCP(\n  { name: 'demo-server', version: '0.1.0' },\n  prompts,\n  resources,\n  tools\n);\n",
+        "key_points": [
+          "Official TypeScript SDK available",
+          "Community packages like mcp-js-server",
+          "Modular architecture with separate tool/resource/prompt definitions",
+          "Browser-compatible versions available",
+          "WebSocket and HTTP transport support"
+        ]
+      },
+      "server_configuration": {
+        "question": "How do I configure and deploy MCP servers?",
+        "answer": "MCP servers can be configured through JSON configuration files (similar to Claude Desktop), environment variables, and command-line arguments. Deployment options include local stdio transport, remote HTTP/SSE servers, and containerized solutions with Docker.",
+        "key_points": [
+          "JSON configuration files for server definitions",
+          "Environment variable support for sensitive data",
+          "Multiple transport options (stdio, HTTP, SSE, WebSocket)",
+          "Docker containerization for scalable deployment",
+          "Integration with AI platforms (Claude Desktop, VS Code, Cursor)"
+        ]
+      }
+    },
+    "best_practices": {
+      "security": {
+        "question": "What are the security best practices for MCP servers?",
+        "answer": "MCP security involves proper authentication (OAuth 2.0), avoiding session-based auth, input validation, secure data handling, and following the principle of least privilege. Servers should implement proper error handling, logging, and avoid prompt injection vulnerabilities.",
+        "key_points": [
+          "Use OAuth 2.0 with secure certificates",
+          "Avoid session-based authentication",
+          "Implement proper input validation and sanitization",
+          "Follow principle of least privilege",
+          "Secure handling of sensitive data and API keys",
+          "Prevent prompt injection attacks",
+          "Comprehensive error handling and logging"
+        ]
+      },
+      "performance": {
+        "question": "How can I optimize MCP server performance?",
+        "answer": "Performance optimization includes implementing efficient caching, connection pooling, async operations, proper resource management, and monitoring. Aim for sub-1-second response times, 99%+ uptime, and graceful error handling to ensure reliable service.",
+        "key_points": [
+          "Implement caching for frequently accessed data",
+          "Use connection pooling for external services",
+          "Leverage async/await for I/O operations",
+          "Monitor resource usage and set appropriate limits",
+          "Aim for <1 second response times",
+          "Maintain 99%+ uptime availability",
+          "Implement circuit breakers for external dependencies"
+        ]
+      },
+      "design_patterns": {
+        "question": "What are common MCP server design patterns?",
+        "answer": "Common patterns include the Service Wrapper pattern (wrapping existing APIs), Data Connector pattern (connecting to databases/files), Multi-Agent pattern (coordinating multiple specialized servers), and Context Aggregation pattern (combining data from multiple sources).",
+        "key_points": [
+          "Service Wrapper: Adapt existing APIs to MCP interface",
+          "Data Connector: Provide structured access to data sources",
+          "Multi-Agent: Coordinate multiple specialized servers",
+          "Context Aggregation: Combine data from multiple sources",
+          "Tool Chaining: Enable complex workflows through tool composition",
+          "Resource Subscription: Real-time updates for dynamic data"
+        ]
+      }
+    },
+    "troubleshooting": {
+      "connection_issues": {
+        "question": "How do I troubleshoot MCP connection problems?",
+        "answer": "Common connection issues include network configuration problems, authentication failures, protocol mismatches, and resource conflicts. Debug by checking logs, verifying configurations, testing with minimal setups, and ensuring all dependencies are properly installed.",
+        "key_points": [
+          "Check network connectivity and firewall settings",
+          "Verify authentication credentials and permissions",
+          "Ensure protocol version compatibility",
+          "Review server logs for detailed error messages",
+          "Test with minimal server configuration",
+          "Validate JSON-RPC message formatting",
+          "Check for port conflicts and resource availability"
+        ]
+      },
+      "common_errors": {
+        "question": "What are the most common MCP implementation errors?",
+        "answer": "Common errors include incorrect JSON-RPC formatting, missing required schema fields, authentication failures, timeout issues, and improper error handling. Most issues can be resolved through careful validation of message formats and proper exception handling.",
+        "key_points": [
+          "Invalid JSON-RPC message structure",
+          "Missing required schema properties",
+          "Incorrect tool/resource parameter types",
+          "Authentication and authorization failures",
+          "Network timeout and connectivity issues",
+          "Improper error response formatting",
+          "Resource URI formatting errors"
+        ]
+      },
+      "debugging_techniques": {
+        "question": "What debugging techniques work best for MCP servers?",
+        "answer": "Effective debugging involves using MCP Inspector for protocol analysis, comprehensive logging, message tracing, unit testing individual components, and gradual integration testing. The MCP development tools provide excellent debugging capabilities.",
+        "key_points": [
+          "Use MCP Inspector for protocol message analysis",
+          "Implement comprehensive logging at all levels",
+          "Trace JSON-RPC messages between client and server",
+          "Unit test tools, resources, and prompts independently",
+          "Use development mode for enhanced debugging output",
+          "Test with multiple client implementations",
+          "Monitor resource usage and performance metrics"
+        ]
+      }
+    },
+    "advanced_topics": {
+      "custom_transports": {
+        "question": "How do I implement custom transport layers for MCP?",
+        "answer": "Custom transports implement the MCP transport interface to support different communication protocols. This involves handling message serialization/deserialization, connection management, and error handling while maintaining MCP protocol compliance.",
+        "key_points": [
+          "Implement standard MCP transport interface",
+          "Handle JSON-RPC message serialization",
+          "Manage connection lifecycle (connect, disconnect, error handling)",
+          "Support bidirectional communication",
+          "Implement proper error propagation",
+          "Consider security requirements for transport layer"
+        ]
+      },
+      "enterprise_integration": {
+        "question": "How do I integrate MCP servers in enterprise environments?",
+        "answer": "Enterprise integration requires attention to security, scalability, monitoring, and compliance. Implement proper authentication, use containerization, set up monitoring and alerting, and ensure compliance with organizational security policies.",
+        "key_points": [
+          "Implement enterprise authentication (LDAP, SAML, OAuth)",
+          "Use container orchestration (Kubernetes, Docker Swarm)",
+          "Set up monitoring, alerting, and log aggregation",
+          "Implement API rate limiting and quota management",
+          "Ensure compliance with security policies",
+          "Plan for high availability and disaster recovery"
+        ]
+      }
+    }
+  }
+]   
