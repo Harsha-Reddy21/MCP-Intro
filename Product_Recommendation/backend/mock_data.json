@@ -1,0 +1,374 @@
+{
+  "categories": [
+    "Electronics",
+    "Clothing", 
+    "Home & Garden",
+    "Sports & Outdoors",
+    "Books",
+    "Beauty & Personal Care",
+    "Toys & Games",
+    "Automotive"
+  ],
+  "products": [
+    {
+      "name": "Wireless Bluetooth Headphones",
+      "category": "Electronics",
+      "price": 89.99,
+      "description": "High-quality wireless headphones with noise cancellation",
+      "rating": 4.5,
+      "rating_count": 150,
+      "image_url": "https://via.placeholder.com/300x300?text=Wireless+Bluetooth+Headphones"
+    },
+    {
+      "name": "Smartphone",
+      "category": "Electronics", 
+      "price": 699.99,
+      "description": "Latest smartphone with advanced camera and fast processor",
+      "rating": 4.7,
+      "rating_count": 320,
+      "image_url": "https://via.placeholder.com/300x300?text=Smartphone"
+    },
+    {
+      "name": "Laptop",
+      "category": "Electronics",
+      "price": 1299.99,
+      "description": "Powerful laptop for work and gaming", 
+      "rating": 4.6,
+      "rating_count": 89,
+      "image_url": "https://via.placeholder.com/300x300?text=Laptop"
+    },
+    {
+      "name": "Smart Watch",
+      "category": "Electronics",
+      "price": 299.99,
+      "description": "Fitness tracking smartwatch with health monitoring",
+      "rating": 4.3,
+      "rating_count": 210,
+      "image_url": "https://via.placeholder.com/300x300?text=Smart+Watch"
+    },
+    {
+      "name": "Tablet",
+      "category": "Electronics",
+      "price": 449.99,
+      "description": "10-inch tablet perfect for entertainment and productivity",
+      "rating": 4.4,
+      "rating_count": 167,
+      "image_url": "https://via.placeholder.com/300x300?text=Tablet"
+    },
+    {
+      "name": "Cotton T-Shirt",
+      "category": "Clothing",
+      "price": 19.99,
+      "description": "Comfortable 100% cotton t-shirt in various colors",
+      "rating": 4.2,
+      "rating_count": 85,
+      "image_url": "https://via.placeholder.com/300x300?text=Cotton+T-Shirt"
+    },
+    {
+      "name": "Denim Jeans", 
+      "category": "Clothing",
+      "price": 79.99,
+      "description": "Classic fit denim jeans with stretch comfort",
+      "rating": 4.1,
+      "rating_count": 134,
+      "image_url": "https://via.placeholder.com/300x300?text=Denim+Jeans"
+    },
+    {
+      "name": "Running Shoes",
+      "category": "Clothing",
+      "price": 129.99,
+      "description": "Lightweight running shoes with excellent cushioning",
+      "rating": 4.8,
+      "rating_count": 298,
+      "image_url": "https://via.placeholder.com/300x300?text=Running+Shoes"
+    },
+    {
+      "name": "Winter Jacket",
+      "category": "Clothing",
+      "price": 199.99,
+      "description": "Warm winter jacket with water-resistant coating",
+      "rating": 4.5,
+      "rating_count": 76,
+      "image_url": "https://via.placeholder.com/300x300?text=Winter+Jacket"
+    },
+    {
+      "name": "Dress Shirt",
+      "category": "Clothing",
+      "price": 49.99,
+      "description": "Professional dress shirt for business occasions",
+      "rating": 4.0,
+      "rating_count": 112,
+      "image_url": "https://via.placeholder.com/300x300?text=Dress+Shirt"
+    },
+    {
+      "name": "Coffee Maker",
+      "category": "Home & Garden",
+      "price": 89.99,
+      "description": "Programmable coffee maker with auto-shut off",
+      "rating": 4.3,
+      "rating_count": 203,
+      "image_url": "https://via.placeholder.com/300x300?text=Coffee+Maker"
+    },
+    {
+      "name": "Indoor Plant Set",
+      "category": "Home & Garden",
+      "price": 39.99,
+      "description": "Set of 3 low-maintenance indoor plants",
+      "rating": 4.6,
+      "rating_count": 67,
+      "image_url": "https://via.placeholder.com/300x300?text=Indoor+Plant+Set"
+    },
+    {
+      "name": "Bed Sheets Set",
+      "category": "Home & Garden",
+      "price": 59.99,
+      "description": "Soft microfiber bed sheets set, queen size",
+      "rating": 4.4,
+      "rating_count": 189,
+      "image_url": "https://via.placeholder.com/300x300?text=Bed+Sheets+Set"
+    },
+    {
+      "name": "Kitchen Knife Set",
+      "category": "Home & Garden",
+      "price": 149.99,
+      "description": "Professional kitchen knife set with wooden block",
+      "rating": 4.7,
+      "rating_count": 145,
+      "image_url": "https://via.placeholder.com/300x300?text=Kitchen+Knife+Set"
+    },
+    {
+      "name": "Vacuum Cleaner",
+      "category": "Home & Garden",
+      "price": 249.99,
+      "description": "Powerful bagless vacuum cleaner for all floor types",
+      "rating": 4.5,
+      "rating_count": 234,
+      "image_url": "https://via.placeholder.com/300x300?text=Vacuum+Cleaner"
+    },
+    {
+      "name": "Yoga Mat",
+      "category": "Sports & Outdoors",
+      "price": 29.99,
+      "description": "Non-slip yoga mat for home and studio practice",
+      "rating": 4.4,
+      "rating_count": 178,
+      "image_url": "https://via.placeholder.com/300x300?text=Yoga+Mat"
+    },
+    {
+      "name": "Camping Tent",
+      "category": "Sports & Outdoors",
+      "price": 159.99,
+      "description": "4-person waterproof camping tent",
+      "rating": 4.6,
+      "rating_count": 92,
+      "image_url": "https://via.placeholder.com/300x300?text=Camping+Tent"
+    },
+    {
+      "name": "Basketball",
+      "category": "Sports & Outdoors",
+      "price": 24.99,
+      "description": "Official size basketball for indoor and outdoor play",
+      "rating": 4.2,
+      "rating_count": 156,
+      "image_url": "https://via.placeholder.com/300x300?text=Basketball"
+    },
+    {
+      "name": "Hiking Backpack",
+      "category": "Sports & Outdoors",
+      "price": 89.99,
+      "description": "30L hiking backpack with multiple compartments",
+      "rating": 4.5,
+      "rating_count": 123,
+      "image_url": "https://via.placeholder.com/300x300?text=Hiking+Backpack"
+    },
+    {
+      "name": "Fitness Tracker",
+      "category": "Sports & Outdoors",
+      "price": 79.99,
+      "description": "Waterproof fitness tracker with heart rate monitor",
+      "rating": 4.3,
+      "rating_count": 267,
+      "image_url": "https://via.placeholder.com/300x300?text=Fitness+Tracker"
+    },
+    {
+      "name": "Python Programming Guide",
+      "category": "Books",
+      "price": 34.99,
+      "description": "Comprehensive guide to Python programming",
+      "rating": 4.8,
+      "rating_count": 89,
+      "image_url": "https://via.placeholder.com/300x300?text=Python+Programming+Guide"
+    },
+    {
+      "name": "Mystery Novel",
+      "category": "Books",
+      "price": 14.99,
+      "description": "Bestselling mystery novel with unexpected twists",
+      "rating": 4.1,
+      "rating_count": 345,
+      "image_url": "https://via.placeholder.com/300x300?text=Mystery+Novel"
+    },
+    {
+      "name": "Cooking Cookbook",
+      "category": "Books",
+      "price": 24.99,
+      "description": "100 easy recipes for everyday cooking",
+      "rating": 4.5,
+      "rating_count": 167,
+      "image_url": "https://via.placeholder.com/300x300?text=Cooking+Cookbook"
+    },
+    {
+      "name": "Self-Help Book",
+      "category": "Books",
+      "price": 19.99,
+      "description": "Transform your life with proven strategies",
+      "rating": 4.2,
+      "rating_count": 234,
+      "image_url": "https://via.placeholder.com/300x300?text=Self-Help+Book"
+    },
+    {
+      "name": "Science Fiction Novel",
+      "category": "Books",
+      "price": 16.99,
+      "description": "Epic space adventure in a distant galaxy",
+      "rating": 4.6,
+      "rating_count": 189,
+      "image_url": "https://via.placeholder.com/300x300?text=Science+Fiction+Novel"
+    },
+    {
+      "name": "Moisturizing Cream",
+      "category": "Beauty & Personal Care",
+      "price": 29.99,
+      "description": "Hydrating face cream for all skin types",
+      "rating": 4.4,
+      "rating_count": 123,
+      "image_url": "https://via.placeholder.com/300x300?text=Moisturizing+Cream"
+    },
+    {
+      "name": "Shampoo & Conditioner Set",
+      "category": "Beauty & Personal Care",
+      "price": 24.99,
+      "description": "Nourishing hair care set for damaged hair",
+      "rating": 4.3,
+      "rating_count": 98,
+      "image_url": "https://via.placeholder.com/300x300?text=Shampoo+%26+Conditioner+Set"
+    },
+    {
+      "name": "Electric Toothbrush",
+      "category": "Beauty & Personal Care",
+      "price": 79.99,
+      "description": "Rechargeable electric toothbrush with multiple modes",
+      "rating": 4.7,
+      "rating_count": 156,
+      "image_url": "https://via.placeholder.com/300x300?text=Electric+Toothbrush"
+    },
+    {
+      "name": "Perfume",
+      "category": "Beauty & Personal Care",
+      "price": 89.99,
+      "description": "Long-lasting fragrance with floral notes",
+      "rating": 4.2,
+      "rating_count": 78,
+      "image_url": "https://via.placeholder.com/300x300?text=Perfume"
+    },
+    {
+      "name": "Makeup Kit",
+      "category": "Beauty & Personal Care",
+      "price": 59.99,
+      "description": "Complete makeup kit with brushes and mirror",
+      "rating": 4.5,
+      "rating_count": 134,
+      "image_url": "https://via.placeholder.com/300x300?text=Makeup+Kit"
+    },
+    {
+      "name": "Board Game",
+      "category": "Toys & Games",
+      "price": 39.99,
+      "description": "Strategic board game for family fun",
+      "rating": 4.6,
+      "rating_count": 145,
+      "image_url": "https://via.placeholder.com/300x300?text=Board+Game"
+    },
+    {
+      "name": "LEGO Building Set",
+      "category": "Toys & Games",
+      "price": 79.99,
+      "description": "Creative building set with 500+ pieces",
+      "rating": 4.8,
+      "rating_count": 267,
+      "image_url": "https://via.placeholder.com/300x300?text=LEGO+Building+Set"
+    },
+    {
+      "name": "Puzzle 1000 pieces",
+      "category": "Toys & Games",
+      "price": 19.99,
+      "description": "Challenging jigsaw puzzle with beautiful artwork",
+      "rating": 4.3,
+      "rating_count": 89,
+      "image_url": "https://via.placeholder.com/300x300?text=Puzzle+1000+pieces"
+    },
+    {
+      "name": "Action Figure",
+      "category": "Toys & Games",
+      "price": 24.99,
+      "description": "Collectible action figure with accessories",
+      "rating": 4.4,
+      "rating_count": 112,
+      "image_url": "https://via.placeholder.com/300x300?text=Action+Figure"
+    },
+    {
+      "name": "Remote Control Car",
+      "category": "Toys & Games",
+      "price": 149.99,
+      "description": "High-speed RC car for outdoor adventures",
+      "rating": 4.7,
+      "rating_count": 178,
+      "image_url": "https://via.placeholder.com/300x300?text=Remote+Control+Car"
+    },
+    {
+      "name": "Car Phone Mount",
+      "category": "Automotive",
+      "price": 19.99,
+      "description": "Adjustable phone mount for dashboard",
+      "rating": 4.1,
+      "rating_count": 234,
+      "image_url": "https://via.placeholder.com/300x300?text=Car+Phone+Mount"
+    },
+    {
+      "name": "Car Vacuum Cleaner",
+      "category": "Automotive",
+      "price": 49.99,
+      "description": "Portable vacuum cleaner for car interiors",
+      "rating": 4.3,
+      "rating_count": 156,
+      "image_url": "https://via.placeholder.com/300x300?text=Car+Vacuum+Cleaner"
+    },
+    {
+      "name": "Dash Cam",
+      "category": "Automotive",
+      "price": 129.99,
+      "description": "HD dash camera with night vision",
+      "rating": 4.5,
+      "rating_count": 98,
+      "image_url": "https://via.placeholder.com/300x300?text=Dash+Cam"
+    },
+    {
+      "name": "Car Air Freshener",
+      "category": "Automotive",
+      "price": 9.99,
+      "description": "Long-lasting car air freshener",
+      "rating": 3.9,
+      "rating_count": 67,
+      "image_url": "https://via.placeholder.com/300x300?text=Car+Air+Freshener"
+    },
+    {
+      "name": "Tire Pressure Gauge",
+      "category": "Automotive",
+      "price": 14.99,
+      "description": "Digital tire pressure gauge for accurate readings",
+      "rating": 4.2,
+      "rating_count": 123,
+      "image_url": "https://via.placeholder.com/300x300?text=Tire+Pressure+Gauge"
+    }
+  ]
+} 
